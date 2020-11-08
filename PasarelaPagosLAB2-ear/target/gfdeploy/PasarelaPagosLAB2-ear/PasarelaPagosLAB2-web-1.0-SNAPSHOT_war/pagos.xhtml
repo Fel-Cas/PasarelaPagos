@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="CSS/estilo.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <header>
+                <h1>Pasarela de Pago, la Manguita</h1>
+                <p>Realiza pagos de manera segura y ágil</p>
+                <nav class="navigation-bar">
+                    <ul>
+                        <li><p:link outcome="#{pagoController.volverPagos()}"   class="link" value="Inicio"/></li>
+                        <li><p:link outcome="#{pagoController.pagar()}" class="link" value="Realizar Pago"/></li>
+                        <li><p:link  class="link" value="Ver Pagos"/></li>
+                    </ul>
+                </nav>
+            </header>
+    </h:body>
+</html>
+

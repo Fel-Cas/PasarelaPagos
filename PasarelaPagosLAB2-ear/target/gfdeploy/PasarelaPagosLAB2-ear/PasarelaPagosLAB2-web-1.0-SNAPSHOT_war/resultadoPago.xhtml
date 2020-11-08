@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <div class="intro-text">
+            
+               <h2>Señor(a) #{realizarPagoController.pago.nomCliente} #{realizarPagoController.pago.apellCliente}</h2>
+        </div>  
+                
+        
+        <p:outputPanel id="restrictPanel" layout="block" style="width:440px;height:690px;border:1px solid #666666;margin-bottom:20px">
+            <p:panel id="conpnl" header="DATOS DEL PAGO: " style="width:400px;height:650px">
+                <p:barcode value="Pago Exitoso!! Cedula:#{realizarPagoController.pago.idCliente}. Nombre: #{realizarPagoController.pago.nomCliente} #{realizarPagoController.pago.apellCliente}.Cantidad: #{realizarPagoController.pago.valorPago}. Fecha Pago: #{realizarPagoController.pago.fechaPago}"
+                                           type="qr" height="250px" width="250px" />
+           
+                <p:panel id="pnl" header="Cédula:">
+                    <h:outputText value="#{realizarPagoController.pago.idCliente}" />
+                </p:panel>
+               
+                <p:panel id="pnl" header="Nombre:">
+                    <h:outputText value="#{realizarPagoController.pago.nomCliente}" />
+                </p:panel>
+                <p:panel id="pnl" header="Apellido:">
+                    <h:outputText value="#{realizarPagoController.pago.apellCliente}" />
+                </p:panel>
+                <p:panel id="pnl2" header="Valor Pagado:">
+                    <h:outputText value="#{realizarPagoController.pago.valorPago}" />
+                </p:panel>
+                
+                
+                <p:panel id="pnl3" header="Fecha:">
+                    <h:outputText value="#{beanValidationView.pago.fechaPago}" />
+                </p:panel>                
+            </p:panel>
+        </p:outputPanel>
+    </h:body> 
+</html>
+
