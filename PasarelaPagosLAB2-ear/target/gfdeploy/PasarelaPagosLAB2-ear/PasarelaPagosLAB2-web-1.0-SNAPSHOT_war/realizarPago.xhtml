@@ -5,8 +5,9 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Pagar</title>
         <link href="CSS/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/pago.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <header>
@@ -20,9 +21,10 @@
                     </ul>
                 </nav>
             </header>
+        <br/>
         <f:view>
-            <h:form>
-                <p:panel header="GENERACION DE PAGOS">
+            <h:form >
+                <p:panel header="GENERACION DE PAGOS" class="table">
                 <p:messages />
                 <h:panelGrid columns="4" cellpadding="5">                    
                     <p:outputLabel for="@next" value="Cédula:" />
@@ -68,14 +70,21 @@
                     <h:outputText value="#{realizarPagoController.valor_pago}" />
                 
                 </h:panelGrid>
-                <p:commandButton class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" value="Enviar Pago" ajax="false"  validateClient="true" action="#{realizarPagoController.guardarBBDD()}"/>
+                <p:commandButton class="btn1" value="Enviar Pago" ajax="false"  validateClient="true" action="#{realizarPagoController.guardarBBDD()}"/>
             </p:panel>
             </h:form>
         </f:view>
         <h:form>
-            <p:commandButton class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" value="Cancelar" ajax="false"  validateClient="false" action="#{pagoController.volverPagos()}" />
+            <p:commandButton class="btn2" value="Cancelar" ajax="false"  validateClient="false" action="#{pagoController.volverPagos()}" />
         
         </h:form>
+        <br/>
+        <footer>
+                <div class="footer">
+                    <span class="copyright">Copyright &copy; LAB2-2020 </span>
+                    <p>Gracias por preferirnos</p>
+                </div>              
+        </footer>
     </h:body>
 </html>
 

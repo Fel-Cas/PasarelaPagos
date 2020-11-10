@@ -4,44 +4,47 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Resultado</title>
+        <link href="CSS/exito.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
        <div class="intro-text">
             
                <h2>Señor(a) #{realizarPagoController.pago.nomCliente} #{realizarPagoController.pago.apellCliente}</h2>
         </div>  
-                
-        
-        <p:outputPanel id="restrictPanel" layout="block" style="width:440px;height:690px;border:1px solid #666666;margin-bottom:20px">
-            <p:panel id="conpnl" header="DATOS DEL PAGO: " style="width:400px;height:650px">
+        <div class="contenedor">
+         <p:graphicImage value="Img/mensaje.png"   style="width: 300px;align-items: center"/>
+        <br/>
+         <p:outputPanel class="table" id="restrictPanel" layout="block" style="width:440px;border:1px solid #666666;margin-bottom:20px">
+            <p:panel id="conpnl" header="DATOS DEL PAGO: " style="width:400px;">
                 <p:barcode value="Pago Exitoso!! Cedula:#{realizarPagoController.pago.idCliente}. Nombre: #{realizarPagoController.pago.nomCliente} #{realizarPagoController.pago.apellCliente}.Cantidad: #{realizarPagoController.pago.valorPago}. Fecha Pago: #{realizarPagoController.pago.fechaPago}"
                                            type="qr" height="250px" width="250px" />
            
-                <p:panel id="pnl" header="Cédula:">
+                <p:panel class="col" id="pn1" header="Cédula:">
                     <h:outputText value="#{realizarPagoController.pago.idCliente}" />
                 </p:panel>
                
-                <p:panel id="pnl" header="Nombre:">
+                <p:panel class="col" id="pn2" header="Nombre:">
                     <h:outputText value="#{realizarPagoController.pago.nomCliente}" />
                 </p:panel>
-                <p:panel id="pnl" header="Apellido:">
+                <p:panel class="col" id="pn3" header="Apellido:">
                     <h:outputText value="#{realizarPagoController.pago.apellCliente}" />
                 </p:panel>
-                <p:panel id="pnl2" header="Valor Pagado:">
+                <p:panel class="col" id="pn4" header="Valor Pagado:">
                     <h:outputText value="#{realizarPagoController.pago.valorPago}" />
                 </p:panel>
                 
                 
-                <p:panel id="pnl3" header="Fecha:">
+                <p:panel class="col" id="pn5" header="Fecha:">
                     <h:outputText value="#{beanValidationView.pago.fechaPago}" />
                 </p:panel>                
             </p:panel>
         </p:outputPanel>
         <h:form>
-            <p:commandButton class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" value="Volver Inicio" ajax="false"  validateClient="false" action="#{pagoController.volverPagos()}" />
+            <p:commandButton class="btn" value="Volver Inicio" ajax="false"  validateClient="false" action="#{pagoController.volverPagos()}" />
         
         </h:form>
+       </div>      
     </h:body> 
 </html>
 

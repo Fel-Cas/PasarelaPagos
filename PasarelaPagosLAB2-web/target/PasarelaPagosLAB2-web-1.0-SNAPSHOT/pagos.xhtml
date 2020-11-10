@@ -5,8 +5,9 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Lista Pagos</title>
         <link href="CSS/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/pagos.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <header>
@@ -25,7 +26,7 @@
 
             <h:form>
                 <h1><h:outputText value="Lista de Pagos"/></h1>
-                <p:dataTable value="#{pagoController.pagos}" style="margin-bottom:20px"
+                <p:dataTable class="table" value="#{pagoController.pagos}" style="margin-bottom:20px"
                              var="item"
                              paginator="true"
                              reflow="true"
@@ -33,47 +34,52 @@
                              widgetVar="pagoTable"
                              rowStyleClass="#{item.valorPago le 60000 ? 'old':null}" >
                             
-                            <p:column headerText="Qr Code" >
+                    <p:column  class="col"  headerText="Qr Code" >
                                 <p:barcode value=" Cédula:#{item.idCliente}. Nombre: #{item.nomCliente} #{item.apellCliente}. Correo: #{item.emailCliente}. Fecha pago: #{item.fechaPago}. Valor pago: #{item.valorPago} "
                                            type="qr" height="150px" width="150px" />
-                            </p:column>
-                    <p:column  headerText="Id Pago">
+                     </p:column>
+                    <p:column class="col" headerText="Id Pago">
                         <h:outputText value="#{item.idPago}"/>
                     </p:column>
-                    <p:column headerText="Cédula">
+                    <p:column class="col" headerText="Cédula">
                         <h:outputText value="#{item.idCliente}"/>
                     </p:column>
-                    <p:column  headerText="Nombre">
+                    <p:column class="col" headerText="Nombre">
                         <h:outputText value="#{item.nomCliente}"/>
                     </p:column>
-                    <p:column  headerText="Apellido" >
+                    <p:column class="col" headerText="Apellido" >
                         <h:outputText value="#{item.apellCliente}"/>
                     </p:column>
-                    <p:column headerText="Email">
+                    <p:column class="col" headerText="Email">
                         <h:outputText value="#{item.emailCliente}"/>
                     </p:column>
-                    <p:column headerText="Número Tarjeta">
+                    <p:column class="col" headerText="Número Tarjeta">
                         <h:outputText value="#{item.numTar}"/>
                     </p:column>
-                    <p:column headerText="CSV">
+                    <p:column class="col" headerText="CSV">
                         <h:outputText value="#{item.csvTar}"/>
                     </p:column>
-                    <p:column headerText="Tipo Tarjeta">
+                    <p:column class="col" headerText="Tipo Tarjeta">
                         <h:outputText value="#{item.tipoTar}"/>
                     </p:column>
-                    <p:column headerText="Fecha de Espiración">
+                    <p:column class="col" headerText="Fecha de Espiración">
                         <h:outputText value="#{item.expiracionTarj}"/>
                     </p:column>
-                    <p:column headerText="Valor Pago">
+                    <p:column class="col" headerText="Valor Pago">
                         <h:outputText value="#{item.valorPago}"/>
                     </p:column>
-                    <p:column headerText="Fecha Pago" >
+                    <p:column class="col" headerText="Fecha Pago" >
                         <h:outputText value="#{item.fechaPago}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>
         </f:view>
-
+        <footer>
+                <div class="footer">
+                    <span class="copyright">Copyright &copy; LAB2-2020 </span>
+                    <p>Gracias por preferirnos</p>
+                </div>              
+        </footer>
     </h:body>
 </html>
 

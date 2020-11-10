@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Pasarela Pagos</title>
     <link href="CSS/estilo.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
@@ -22,11 +22,16 @@
                 </nav>
             </header>
             <main>
+                <h2>Somos los mejores y lo sabes!!</h2>
+                <p:galleria  class="panel" value="#{imagesView.images}" var="image" panelWidth="700" panelHeight="313" showCaption="true">
+                    <p:graphicImage value="#{image}"  title="Pagos al instante" style="width: 700px;align-items: center"/>
+                </p:galleria>
             </main>
+            <br/>
             <footer>
-                <div>
+                <div class="footer">
                     <span class="copyright">Copyright &copy; LAB2-2020 </span>
-                    
+                    <p>Gracias por preferirnos</p>
                 </div>              
             </footer>
     </h:body>
